@@ -1,19 +1,27 @@
 package com.example.assignment1;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
-import javafx.collections.ObservableList;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
+
 public class StudentViewController implements Initializable {
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+    private static BorderPane mainLayout;
 
     @FXML
     private ListView<String> activitiesList;
@@ -32,8 +40,13 @@ public class StudentViewController implements Initializable {
 
     private Student student;
 
+
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         student = new Student("Khushwinder","Singh",200485179);
         student.AddActivity("Horse Riding");
         student.AddActivity("Chess");
@@ -48,4 +61,15 @@ public class StudentViewController implements Initializable {
 
 
     }
+
+//    public void switchToList(ActionEvent event) throws IOException {
+//        Parent root = FXMLLoader.load(getClass().getResource("list-view.fxml"));
+//        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        ListController cvc = root.getController();
+//        cvc.setClient(student);
+//        scene = new Scene(root);
+//        stage.setScene(scene);
+//        stage.show();
+//    };
+
 }

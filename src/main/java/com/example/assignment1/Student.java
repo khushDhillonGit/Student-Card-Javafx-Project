@@ -16,7 +16,7 @@ public class Student {
     private Image studentImage;
 
     /**
-     *    Constructor to initialise all the variables
+     *    Constructor to initialise all the variables and get image to print on one card
      *
      */
 
@@ -31,14 +31,27 @@ public class Student {
 
     }
 
-    public Image getStudentImage() {
-        return studentImage;
-    }
+    /**
+     *    Getters to get values of variables
+     *
+     */
 
 
-    public String getFirstName() {
-        return firstName;
-    }
+    public Image getStudentImage() {return studentImage;}
+
+    public String getFirstName() {return firstName;}
+
+    public String getLastName() {return lastName;}
+
+    public int getStudentNumber() {return studentNumber;}
+
+    public ArrayList<String> getActivities() {return activities;}
+
+
+    /**
+     *    setter to validate firstname and also capitlise first letter
+     *
+     */
 
     public void setFirstName(String firstName) {
 
@@ -52,9 +65,10 @@ public class Student {
 
     }
 
-    public String getLastName() {
-        return lastName;
-    }
+    /**
+     *    setter to validate lastname and also capitlise first letter
+     *
+     */
 
     public void setLastName(String lastName) {
         if(lastName.length() >= 2){
@@ -65,9 +79,10 @@ public class Student {
         }
     }
 
-    public int getStudentNumber() {
-        return studentNumber;
-    }
+    /**
+     *    setter to validate studentId to be in between 100000000 and 99999999
+     *
+     */
 
     public void setStudentNumber(int studentNumber) {
         if(studentNumber >= 100000000 && studentNumber <= 999999999){
@@ -77,15 +92,16 @@ public class Student {
         }
     }
 
+    /**
+     *    method to add activity into the activity list and validate if not empty
+     *
+     */
     public void AddActivity(String activity){
         if(!activity.isEmpty()){
             activities.add(activity);
         }else{
             throw new IllegalArgumentException("please provide an activity");
         }
-    }
-    public ArrayList<String> getActivities() {
-        return activities;
     }
 
 
