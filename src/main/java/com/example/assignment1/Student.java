@@ -2,26 +2,38 @@ package com.example.assignment1;
 
 import javafx.scene.image.Image;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 public class Student {
+
     private String firstName;
     private String lastName;
     private int studentNumber;
-    private List<String> activities;
+    private ArrayList<String> activities;
     private Image studentImage;
 
-    public Student(String firstName, String lastName, int studentNumber, List<String> activities) {
+    /**
+     *    Constructor to initialise all the variables
+     *
+     */
+
+    public Student(String firstName, String lastName, int studentNumber) {
         setFirstName(firstName);
         setLastName(lastName);
         setStudentNumber(studentNumber);
 
+        activities = new ArrayList<>();
         String fileName = String.format("images/pic.jpeg");
         studentImage = new Image(getClass().getResource(fileName).toExternalForm());
 
     }
 
+    public Image getStudentImage() {
+        return studentImage;
+    }
 
 
     public String getFirstName() {
@@ -50,7 +62,6 @@ public class Student {
             this.lastName = lastName;
         }else{
             throw new IllegalArgumentException("Please provide a valid lastname");
-
         }
     }
 
@@ -66,11 +77,16 @@ public class Student {
         }
     }
 
-    public List<String> getActivities() {
+    public void AddActivity(String activity){
+        if(!activity.isEmpty()){
+            activities.add(activity);
+        }else{
+            throw new IllegalArgumentException("please provide an activity");
+        }
+    }
+    public ArrayList<String> getActivities() {
         return activities;
     }
 
-    public void setActivities(List<String> activities) {
-        this.activities = activities;
-    }
+
 }
