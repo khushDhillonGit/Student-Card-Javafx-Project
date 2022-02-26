@@ -41,13 +41,10 @@ public class StudentViewController implements Initializable {
     private Student student;
 
 
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        student = new Student("Khushwinder","Singh",200485179);
+        student = new Student("khushwinder","singh",200485179);
         student.AddActivity("Horse Riding");
         student.AddActivity("Chess");
         student.AddActivity("Swimming");
@@ -59,8 +56,9 @@ public class StudentViewController implements Initializable {
         studentImage.setImage(student.getStudentImage());
         activitiesList.getItems().addAll(student.getActivities());
 
-
     }
+
+    //this code is for list - view which i am not able to completely figure out
 
 //    public void switchToList(ActionEvent event) throws IOException {
 //        Parent root = FXMLLoader.load(getClass().getResource("list-view.fxml"));

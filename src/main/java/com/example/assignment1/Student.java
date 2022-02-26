@@ -2,10 +2,8 @@ package com.example.assignment1;
 
 import javafx.scene.image.Image;
 
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 
 public class Student {
 
@@ -54,7 +52,7 @@ public class Student {
      */
 
     public void setFirstName(String firstName) {
-
+        firstName = firstName.trim();
         if(firstName.length() >= 2){
            firstName = firstName.substring(0,1).toUpperCase() + firstName.substring(1);
             this.firstName = firstName;
@@ -71,6 +69,7 @@ public class Student {
      */
 
     public void setLastName(String lastName) {
+        lastName = lastName.trim();
         if(lastName.length() >= 2){
             lastName = lastName.substring(0,1).toUpperCase() + lastName.substring(1);
             this.lastName = lastName;
